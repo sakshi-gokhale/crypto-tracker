@@ -109,9 +109,10 @@ const CoinDetails = () => {
       <div className="coin-stats">
         <h3>Additional Information</h3>
         <ul>
-          <li><strong>Circulating Supply:</strong> {coinDetails.market_data.circulating_supply.toLocaleString()}</li>
-          <li><strong>Max Supply:</strong> {coinDetails.market_data.max_supply ? coinDetails.market_data.max_supply.toLocaleString() : 'N/A'}</li>
-          <li><strong>Price Change (24h):</strong> {coinDetails.market_data.price_change_percentage_24h.toFixed(2)}%</li>
+          <li>Rank: #{coinDetails.market_data.market_cap_rank.toLocaleString()}</li>
+          <li>Circulating Supply: {coinDetails.market_data.circulating_supply.toLocaleString()}</li>
+          <li>Max Supply: {coinDetails.market_data.max_supply ? coinDetails.market_data.max_supply.toLocaleString() : 'N/A'}</li>
+          <li>Price Change (24h): {coinDetails.market_data.price_change_percentage_24h.toFixed(2)}%</li>
         </ul>
       </div>
 

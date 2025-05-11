@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
@@ -60,6 +59,7 @@ function App() {
             <th>Logo</th>
             <th>Coin</th>
             <th>Market Price ({currency.toUpperCase()})</th>
+            <th>24h Change</th>
           </tr>
         </thead>
         <tbody>
@@ -75,6 +75,9 @@ function App() {
                 </Link>
               </td>
               <td>{getCurrencySymbol(currency)}{searchedCoin.market_data.current_price[currency].toLocaleString()}</td>
+              <td className={searchedCoin.market_data.price_change_percentage_24h >= 0 ? 'positive-change' : 'negative-change'}>
+                {searchedCoin.market_data.price_change_percentage_24h?.toFixed(2)}%
+              </td>
             </tr>
           ) : (
             coins.map((coin) => (
@@ -89,6 +92,9 @@ function App() {
                   </Link>
                 </td>
                 <td>{getCurrencySymbol(currency)}{coin.current_price.toLocaleString()}</td>
+                <td className={coin.price_change_percentage_24h >= 0 ? 'positive-change' : 'negative-change'}>
+                  {coin.price_change_percentage_24h?.toFixed(2)}%
+                </td>
               </tr>
             ))
           )}

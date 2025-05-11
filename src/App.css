@@ -1,28 +1,47 @@
+/* ===== Global Styles ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #131313; /* Dark background to highlight vibrant colors */
+  background-color: #131313;
   color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ===== Layout Structure ===== */
+.page-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrap {
+  flex: 1;
+  padding: 20px 0;
+}
+
+/* ===== App Container ===== */
 .App {
   max-width: 960px;
-  margin: 40px auto;
-  padding: 30px;
+  margin: 0 auto;
+  padding: 20px;
   background: #222222;
   border-radius: 16px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* ===== Header Styles ===== */
 h1 {
   text-align: center;
-  font-size: 3rem;
-  background: linear-gradient(to right, #ff00b3, #00ffff); /* Neon gradient */
+  font-size: 3.5rem;
+  background: linear-gradient(to right, #ff00b3, #00ffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 30px;
 }
 
+/* ===== Form Controls ===== */
 .controls {
   display: flex;
   justify-content: center;
@@ -33,12 +52,12 @@ h1 {
 
 input[type='text'] {
   padding: 12px 18px;
-  border: 2px solid #ff4d6d; /* Hot pink */
+  border: 2px solid #ff4d6d;
   border-radius: 8px;
   font-size: 16px;
   width: 260px;
-  background: #2e003e; /* Dark purple background */
-  color: #ffec3d; /* Yellow-green text */
+  background: #2e003e;
+  color: #ffec3d;
 }
 
 input::placeholder {
@@ -46,7 +65,7 @@ input::placeholder {
 }
 
 button {
-  background: linear-gradient(45deg, #ff00b3, #ffcc00); /* Pink to Yellow gradient */
+  background: linear-gradient(45deg, #ff00b3, #ffcc00);
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -54,24 +73,25 @@ button {
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 button:hover {
   transform: scale(1.05);
-  background: linear-gradient(45deg, #ff7eb9, #ff9100); /* Hover effect */
+  background: linear-gradient(45deg, #ff7eb9, #ff9100);
 }
 
 select {
   padding: 12px;
   border-radius: 8px;
-  background-color: #1e1e1e; /* Dark grey */
-  color: #00ffcc; /* Neon teal */
+  background-color: #1e1e1e;
+  color: #00ffcc;
   border: 2px solid #00ffcc;
   font-size: 16px;
   box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
 }
 
+/* ===== Crypto Table Styles ===== */
 .coins-table {
   width: 100%;
   border-collapse: collapse;
@@ -89,27 +109,68 @@ select {
 }
 
 .coins-table th {
-  background-color: #00ffcc; /* Neon teal header */
+  background-color: #00ffcc;
   color: #131313;
   text-transform: uppercase;
   font-weight: bold;
 }
 
 .coins-table tr:nth-child(even) {
-  background-color: #290046; /* Dark purple */
+  background-color: #290046;
 }
 
 .coins-table tr:nth-child(odd) {
-  background-color: #37006b; /* Deep violet */
+  background-color: #37006b;
 }
 
-.coins-table tr:hover {
-  background-color: #ff007d; /* Hot pink hover effect */
-}
+
 
 .coins-table img {
   border-radius: 50%;
   width: 35px;
   height: 35px;
   vertical-align: middle;
+}
+
+/* Add these to your existing App.css */
+.positive-change {
+  color: #00ff7f; /* Bright green */
+  font-weight: bold;
+}
+
+.negative-change {
+  color: #ff4d6d; /* Bright red */
+  font-weight: bold;
+}
+
+/* Optional: Add arrow icons */
+.positive-change::after {
+  content: " ↑";
+}
+
+.negative-change::after {
+  content: " ↓";
+}
+
+
+/* Target links inside table cells */
+.coins-table a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.coins-table a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+}
+
+/* ===== Footer Styles ===== */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222222;
+  color: #00ffcc;
+  border-top: 1px solid #444;
+  margin-top: auto;
 }
